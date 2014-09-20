@@ -1,0 +1,25 @@
+{
+    "name": "Coinspiration",
+    "version": "1.0.0",
+    "description": "An Ionic project",
+    "dependencies": {
+        "gulp": "^3.8.7",
+        "gulp-rename": "^1.2.0",
+        "gulp-clean": "^0.3.1",
+        "gulp-concat": "^2.3.4",
+        "gulp-embedlr": "^0.5.2",
+        "gulp-jshint": "^1.8.4",
+        "gulp-livereload": "^2.1.1",
+        "gulp-sass" : "0.7.3",
+        "gulp-ng-annotate" : "*",
+        "gulp-usemin" : "*",
+        "gulp-minify-css" : "*",
+        "gulp-minify-html" : "*",
+        "gulp-copy" : "*",
+        "gulp-uglify" : "*",
+        "gulp-inline-angular-templates" : "*",
+        "connect-livereload": "^0.4.0",
+        "express": "^4.8.5",
+        "tiny-lr": "^0.1.0"
+    }
+}
