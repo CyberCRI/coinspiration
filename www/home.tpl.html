@@ -1,0 +1,33 @@
+<ion-nav-bar class="bar-positive">
+    <ion-nav-back-button class="button-icon icon  ion-android-arrow-back">
+        Back
+    </ion-nav-back-button>
+    <ion-nav-buttons side="right">
+        <button class="button button-icon" ng-if="ctrl.me" ng-click="ctrl.popover.show($event);">
+            <i class="icon ion-navicon-round"></i>
+        </button>
+        <button class="button button-icon" ng-if="!ctrl.me" ui-sref="login">
+            <i class="icon ion-log-in"></i>
+        </button>
+    </ion-nav-buttons>
+</ion-nav-bar>
+<ion-nav-view name="home"></ion-nav-view>
+
+<script id="personnal-menu.tpl.html" type="text/ng-template">
+    <ion-popover-view>
+        <ion-content>
+            <div  class="item" style="text-align: center">
+                <img ng-src="{{ me.poster || 'img/avatar.jpg' }}" alt="profile picture" class="item-image" style="border-radius: 50%;padding:5px;border:solid 1px black;"/>
+            </div>
+            <div class="list">
+                <button class="button  button-icon button-block" ng-click="editPicture()">
+                    <i class="icon ion-android-camera">Edit Picture</i>
+                </button>
+                <button class="button  button-icon button-block" style="text-align: right" ng-click="ctrl.logout(e)">
+                    <i class="icon ion-log-out">Log-out</i>
+                </button>
+
+            </div>
+        </ion-content>
+    </ion-popover-view>
+</script>

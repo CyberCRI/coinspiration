@@ -4,33 +4,35 @@ angular.module('coin.challenges', [
     $stateProvider.state('challenge', {
         url: "/challenge",
         abstract: true,
-        templateUrl: "modules/challenge/templates/challenge.tpl.html"
+        views : {
+            home : {
+                templateUrl: "modules/actionGroup/templates/action-group.tpl.html"
+            }
+        }
     }).state('challenge.discussion', {
         url: '/discussion',
         views: {
             'discussion': {
-                templateUrl: 'modules/challenge/templates/discussion.tpl.html',
-                controller: 'discussion as DiscussionCtrl'
+                templateUrl: 'modules/actionGroup/templates/discussion.tpl.html',
+                controller: 'ctrl as DiscussionCtrl'
             }
         }
     }).state('challenge.action', {
         url: '/action',
         views: {
             'action': {
-                templateUrl: 'modules/challenge/templates/action.tpl.html',
-                controller: 'action as ActionCtrl'
+                templateUrl: 'modules/actionGroup/templates/action.tpl.html',
+                controller: 'ctrl as ActionCtrl'
             }
         }
     }).state('challenge.members', {
         url: '/members',
         views: {
             'members': {
-                templateUrl: 'modules/challenge/templates/members.tpl.html',
-                controller: 'member as MembersCtrl'
+                templateUrl: 'modules/actionGroup/templates/members.tpl.html',
+                controller: 'ctrl as MembersCtrl'
             }
         }
     });
-}).constant('Config',{
-    "apiUrl" : 'localhost:5011'
 });
 

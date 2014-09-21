@@ -3,10 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
+    <title>Coinspiration</title>
     <!-- build:css styles/main.css -->
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/ionic.app.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css"/>
+    <!--<link href="css/ionic.app.css" rel="stylesheet">-->
     <!-- endbuild -->
 
     <!-- cordova script (this will be a 404 during development) -->
@@ -14,25 +15,27 @@
 
     <!-- build:js scripts/scripts.js -->
     <script src="lib/lodash/dist/lodash.js"></script>
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <!--<script src="lib/ionic/js/ionic.bundle.js"></script>-->
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/ionic/js/ionic.js"></script>
+    <script src="lib/ionic/js/ionic-angular.js"></script>
+    <script src="lib/angular-animate/angular-animate.js"></script>
+    <script src="lib/angular-sanitize/angular-sanitize.js"></script>
+    <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="lib/satellizer/satellizer.js"></script>
-    <script src="lib/angular-bindonce/bindonce.js"></script>
     <script src="lib/restangular/dist/restangular.js"></script>
+    <script src="lib/angular-messages/angular-messages.js"></script>
+    <script src="modules/services/me.js"></script>
     <script src="modules/auth/config.js"></script>
     <script src="modules/auth/controllers.js"></script>
-    <script src="modules/challenge/config.js"></script>
-    <script src="modules/challenge/controllers.js"></script>
-    <script src="modules/home/config.js"></script>
-    <script src="modules/home/controller.js"></script>
+    <script src="modules/actionGroup/config.js"></script>
+    <script src="modules/actionGroup/controllers.js"></script>
+    <script src="modules/groups/config.js"></script>
+    <script src="modules/groups/controller.js"></script>
     <script src="app.js"></script>
     <!-- endbuild -->
 </head>
-<body ng-app="coinspiration" animation="slide-left-right-ios7">
-    <ion-nav-bar class="bar-stable nav-title-slide-ios7">
-        <ion-nav-back-button class="button-icon icon  ion-ios7-arrow-back">
-            Back
-        </ion-nav-back-button>
-    </ion-nav-bar>
+<body ng-app="coinspi">
     <ion-nav-view></ion-nav-view>
 </body>
 </html>

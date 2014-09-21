@@ -1,0 +1,52 @@
+<ion-view title="Sign-up">
+    <ion-content>
+        <form name="signForm">
+            <div class="list">
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Email</span>
+                    <input type="email" name="email" placeholder="Email" required ng-model="ctrl.user.email">
+                </label>
+                <div ng-messages="signForm.email.$error" ng-if="!signForm.email.$pristine">
+                    <div ng-message="required">
+                        you must enter an email address
+                    </div>
+                    <div ng-message="email">
+                        enter a valid email address
+                    </div>
+                </div>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Username</span>
+                    <input type="text" name="username" placeholder="Username" pattern="[a-z]" required ng-model="ctrl.user.username">
+                    <span ng-messages="signForm.username.$error">
+                        <span ng-message="required" ng-if="!signForm.username.$pristine">
+                            you must enter a username
+                        </span>
+                        <span ng-message="pattern">
+                            enter a valid username (no maj)
+                        </span>
+                    </span>
+                </label>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Password</span>
+                    <input type="password" name="password" placeholder="Password"  required ng-model="ctrl.user.password">
+                    <span ng-messages="signupForm.password.$error">
+                        <span ng-message="required" ng-if="!signForm.password.$pristine">
+                            you must enter a password
+                        </span>
+                        <span ng-message="pattern">
+                            enter a valid password
+                        </span>
+                    </span>
+                </label>
+            </div>
+            <div class="padding">
+                <button class="button-block button-positive button" ng-click="ctrl.signup()" ng-disabled="signForm.$invalid">
+                    Sign-up
+                </button>
+            </div>
+        </form>
+        <div class="padding">
+            <button class="button-block button button-energized" ui-sref="auth.login">already a member ?</button>
+        </div>
+    </ion-content>
+</ion-view>

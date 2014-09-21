@@ -1,18 +1,24 @@
 angular.module('coin.auth',[
-    'satellizer'
-]).constant('LoginConf',{
-    apiUrl : 'localhost:5000'
-}).config(function($authProvider,LoginConf,$stateProvider){
-    $authProvider.loginUrl = LoginConf.apiUrl+'/auth/login',
-    $authProvider.signupUrl = LoginConf.apiUrl+'/auth/signup'
 
-    $stateProvider.state('login',{
+]).config(function($stateProvider){
+    $stateProvider.state('auth',{
+        abstract : true,
+        templateUrl : 'modules/auth/templates/auth.tpl.html'
+    }).state('auth.login',{
         url : '/login',
-        templateUrl : 'module/auth/templates/login/tpl.html',
-        controller : 'login as LoginCtrl'
-    }).state('signup',{
-        utl : '/signup',
-        templateUrl : 'module/auth/templates/signup/tpl/html',
-        controller : 'signup as SignupCtrl'
+        views : {
+            auth : {
+                templateUrl : 'modules/auth/templates/login.tpl.html',
+                controller : 'LoginCtrl as ctrl'
+            }
+        }
+    }).state('auth.signup',{
+        url : '/signup',
+        views : {
+            auth : {
+                templateUrl : 'modules/auth/templates/signup.tpl.html',
+                controller : 'SignupCtrl as ctrl'
+            }
+        }
     })
 });

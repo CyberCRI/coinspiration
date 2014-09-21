@@ -5,8 +5,8 @@
         "angular-messages" : "*",
         "satellizer" : "*",
         "restangular" : "*",
-        "angular-bindonce" : "*",
         "angular-image-crop": "*",
-        "lodash" :"*"
+        "lodash" :"*",
+        "angular-messages" : "*"
     }
 }

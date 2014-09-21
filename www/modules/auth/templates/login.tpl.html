@@ -1,0 +1,32 @@
+<ion-view title="Sign-in">
+    <ion-content>
+        <form name="loginForm">
+            <div class="list">
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Email</span>
+                    <input type="email" name="email" placeholder="Email" ng-model="ctrl.user.email" required>
+                </label>
+                <div ng-messages="loginForm.email.$error" ng-if="!loginForm.email.$pristine">
+                    <div ng-message="required">
+                        you must enter an email adress
+                    </div>
+                    <div ng-message="email">
+                        enter a valid email address
+                    </div>
+                </div>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Password</span>
+                    <input type="password" placeholder="Password" ng-model="ctrl.user.password" required>
+                </label>
+            </div>
+            <div class="padding">
+                <button class="button-block button button-positive" ng-click="ctrl.signin()" ng-disabled="loginForm.$invalid">
+                    Login
+                </button>
+            </div>
+            <div class="padding">
+                <button class="button button-block button-energized" ui-sref="auth.signup">not a member ?</button>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>
